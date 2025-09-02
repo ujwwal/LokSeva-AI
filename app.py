@@ -33,9 +33,9 @@ def chat():
         if model is None:
             # Fallback responses when API key is not available
             fallback_responses = [
-                "This scheme provides financial support to students.",
-                "You can apply online at the official portal.",
-                "This scheme is designed to help farmers increase productivity.",
+                "This scheme provides **financial support** to students.",
+                "You can apply *online* at the **official portal**.",
+                "This scheme is designed to help farmers increase **productivity**.",
                 "Please visit your nearest government office for more details.",
                 "The application deadline is typically at the end of each quarter.",
                 "Documents required include Aadhar card, income certificate, and bank details."
