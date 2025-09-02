@@ -200,6 +200,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
 /* Text Colors */
 .text-white { color: #fff; }
 .text-blue-100 { color: #dbeafe; }
+.text-gray-900 { color: #111827; }
 .text-gray-800 { color: #1f2937; }
 .text-gray-700 { color: #374151; }
 .text-gray-600 { color: #4b5563; }
