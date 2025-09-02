@@ -126,8 +126,18 @@ class ChatApp {
         }`;
         
         const textP = document.createElement('p');
-        textP.className = 'text-sm leading-relaxed';
-        textP.textContent = text;
+        textP.className = `text-sm leading-relaxed ${isBot ? 'text-gray-800' : 'text-white'}`;
+        
+        // Process markdown-like formatting for bot responses
+        if (isBot) {
+            // Remove any markdown asterisks and replace with proper formatting
+            let processedText = text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold text
+                .replace(/\*(.*?)\*/g, '<em>$1</em>');  // Italic text
+            textP.innerHTML = processedText;
+        } else {
+            textP.textContent = text;
+        }
         
         const timeDiv = document.createElement('div');
         timeDiv.className = `text-xs mt-2 ${isBot ? 'text-gray-500' : 'text-blue-100'}`;
