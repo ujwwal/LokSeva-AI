@@ -366,7 +366,15 @@ img, svg, video, canvas, audio, iframe, embed, object {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-.animate-spin { animation: spin 1s linear infinite; }
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+  border: 4px solid #e0e7ff;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  box-sizing: border-box;
+}
 
 /* -------------------------------------------------------------
    11. Responsive
@@ -374,4 +382,135 @@ img, svg, video, canvas, audio, iframe, embed, object {
 /* Large screen styles */
 @media (min-width: 1024px) {
   .lg\:max-w-md { max-width: 28rem; }
+}
+
+/* -------------------------------------------------------------
+   12. Chat Component Custom Styles
+   ------------------------------------------------------------- */
+
+/* Chat container */
+.chat-container {
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* AI response formatting */
+.ai-response p {
+  margin-bottom: 0.75rem;
+}
+
+.ai-response ul, .ai-response ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ai-response ul {
+  list-style-type: disc;
+}
+
+.ai-response ol {
+  list-style-type: decimal;
+}
+
+.ai-response h1, .ai-response h2, .ai-response h3, .ai-response h4 {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ai-response h1 {
+  font-size: 1.5rem;
+}
+
+.ai-response h2 {
+  font-size: 1.25rem;
+}
+
+.ai-response h3 {
+  font-size: 1.125rem;
+}
+
+.ai-response a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.ai-response blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.ai-response code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.ai-response pre {
+  background-color: #1e293b;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.ai-response pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+/* Message bubbles styling */
+.user-message-bubble {
+  background-image: linear-gradient(to right, #2563eb, #4338ca);
+  color: white;
+  border-top-right-radius: 0 !important;
+  margin-left: auto;
+  margin-right: 0; /* Stick to the right edge */
+  max-width: 70%;
+}
+
+.ai-message-bubble {
+  background-color: white;
+  color: #1f2937;
+  border-top-left-radius: 0 !important;
+  margin-left: 0; /* Remove left margin */
+  max-width: 75%;
+}
+
+/* Improved spacing for chat messages */
+#chat-messages > div {
+  margin-bottom: 1rem;
+}
+
+/* Chat messages container - ensure right edge alignment */
+#chat-messages .justify-end {
+  margin-right: 0;
+}
+
+/* Avatar placement */
+.justify-end .flex-shrink-0 {
+  margin-left: 0.75rem; /* Space between user message and avatar */
+  margin-right: 0;
+}
+
+/* For AI avatars */
+.justify-start .flex-shrink-0 {
+  margin-right: 0.75rem; /* Space between AI avatar and message */
+  margin-left: 0;
+}
+
+/* Override for space-x-reverse */
+.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(1rem * var(--tw-space-x-reverse)); /* Increased from 0.75rem */
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
